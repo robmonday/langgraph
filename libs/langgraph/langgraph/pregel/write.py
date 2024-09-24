@@ -133,11 +133,11 @@ class ChannelWrite(RunnableCallable):
         ]
         # filter out SKIP_WRITE values
         filtered = [(chan, val) for chan, val in values if val is not SKIP_WRITE]
-        if require_at_least_one_of is not None:
-            if not {chan for chan, _ in filtered} & set(require_at_least_one_of):
-                raise InvalidUpdateError(
-                    f"Must write to at least one of {require_at_least_one_of}"
-                )
+        # if require_at_least_one_of is not None:
+        #     if not {chan for chan, _ in filtered} & set(require_at_least_one_of):
+        #         raise InvalidUpdateError(
+        #             f"Must write to at least one of {require_at_least_one_of}"
+        #         )
         write: TYPE_SEND = config[CONF][CONFIG_KEY_SEND]
         write(sends + filtered)
 
