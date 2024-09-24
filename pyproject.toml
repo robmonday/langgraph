@@ -10,7 +10,7 @@ readme = "README.md"
 python = "^3.10"
 
 [tool.poetry.group.docs.dependencies]
-langgraph = { path = "libs/langgraph/", develop = true }
+langgraph-monorepo = { path = "libs/langgraph/", develop = true }
 langgraph-checkpoint = { path = "libs/checkpoint/", develop = true }
 langgraph-checkpoint-sqlite = { path = "libs/checkpoint-sqlite", develop = true }
 langgraph-checkpoint-postgres = { path = "libs/checkpoint-postgres", develop = true }
